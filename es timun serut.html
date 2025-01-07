@@ -1,0 +1,220 @@
+<head>
+  <!-- Menghubungkan font Darumadrop One dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+  /* Container utama untuk resep */
+  .recipe-container {
+    background-color: rgba(225, 192, 241, 1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    font-family: Darumadrop One, sans-serif;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 22px 17px 64px;
+  }
+  
+  /* Wrapper untuk header dan navigasi */
+  .header-wrapper {
+    align-self: stretch;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 1px 20px 38px;
+  }
+  
+  /* Wrapper tombol kembali */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 25px 8px 1px;
+  }
+  
+  /* Tombol kembali dengan ikon */
+  .back-button {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px;
+    padding: 1px 3px 19px;
+    font-family: 'Darumadrop One', sans-serif; /* Tambahkan font-family */
+  }
+  
+  /* Badge tingkat kesulitan */
+  .difficulty-badge {
+    transform: rotate(-0.016616204777301954rad);
+    border-radius: 15px;
+    background-color: rgba(165, 52, 231, 1);
+    margin-top: 9px;
+    font-size: 24px;
+    padding: 1px 9px 8px;
+  }
+  
+  /* Gambar resep */
+  .recipe-image {
+    aspect-ratio: 0.99;
+    object-fit: contain;
+    object-position: center;
+    width: 261px;
+    border-radius: 247px;
+    z-index: 10;
+    margin-top: -33px;
+    max-width: 100%;
+  }
+  
+  /* Judul resep */
+  .recipe-title {
+    border-radius: 14px;
+    background-color: rgba(211, 124, 255, 1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    margin-top: 25px;
+    width: 220px;
+    font-size: 29px;
+    padding: 8px 48px;
+    text-align: center;
+  }
+  
+  /* Kontainer untuk bahan dan alat */
+  .recipe-content {
+    border-radius: 15px;
+    background-color: rgba(211, 124, 255, 1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 330px;
+    flex-direction: column;
+    font-size: 24px;
+    padding: 12px 13px 12px 26px;
+  }
+  
+  /* Header untuk bagian bahan dan alat */
+  .section-header {
+    border-radius: 13px;
+    background-color: rgba(211, 175, 255, 1);
+    align-self: center;
+    padding: 3px 40px;
+    text-align: center;
+    font-size: 29px;
+  }
+  
+  /* Header untuk bahan */
+  .ingredients-header {
+    width: 190px;
+  }
+  
+  /* Daftar bahan */
+  .ingredients-list {
+    font-size: 20px;
+    margin-top: 22px;
+    width: 100%;
+  }
+  
+  /* Header untuk alat */
+  .tools-header {
+    margin-top: 57px;
+    width: 147px;
+    padding: 0 16px 7px;
+  }
+  
+  /* Daftar alat */
+  .tools-list {
+    margin-top: 5px;
+    width: 272px;
+  }
+  
+  /* Tombol untuk melihat langkah resep */
+  .steps-button {
+    z-index: 10;
+    border-radius: 13px;
+    background-color: rgba(211, 175, 255, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    align-self: end;
+    margin-top: 10px;
+    font-size: 23px;
+    padding: 2px 8px 4px;
+    border: 1px solid transparent;
+    font-family: 'Darumadrop One', sans-serif; /* Tambahkan font-family */
+  }
+  
+  /* Konten yang hanya untuk pembaca layar */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
+
+<article class="recipe-container">
+<!-- Bagian header dengan tombol kembali dan badge kesulitan -->
+<header class="header-wrapper"
+  type="button"
+  onclick="location.href='menu.html'">
+  <div class="back-button-wrapper">
+    <button class="back-button" aria-label="Go back">
+      <!-- Ikon untuk tombol kembali -->
+      <span aria-hidden="true">&lt;</span>
+    </button>
+  </div>
+  <!-- Badge kesulitan resep -->
+  <span class="difficulty-badge">HARD</span>
+</header>
+
+<!-- Gambar resep -->
+<img
+  src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/3ad8224ea201047faca7ac8e9c44b52b0314cf822b44cd2dfd0f0b9bf2500971?apiKey=5ebb4996bcdb4f6db698a2f89422c915&"
+  class="recipe-image"
+  alt="Es timun Serut - Indonesian shaved cucumber drink"
+  loading="lazy"
+/>
+
+<!-- Judul resep -->
+<h1 class="recipe-title">Es timun Serut</h1>
+
+<!-- Konten resep yang mencakup bahan dan alat -->
+<section class="recipe-content">
+  <h2 class="section-header ingredients-header">Bahan-Bahan</h2>
+  <!-- Daftar bahan-bahan yang diperlukan -->
+  <ul class="ingredients-list">
+    <li>2 buah mentimun</li>
+    <li>6 sdm gula pasir</li>
+    <li>800 ml air minum</li>
+    <li>es batu secukup nya</li>
+    <li>sediakan sirup jika anda suka</li>
+  </ul>
+
+  <h2 class="section-header tools-header">Alat-Alat</h2>
+  <!-- Daftar alat-alat yang diperlukan -->
+  <ul class="tools-list">
+    <li>Sendok</li>
+    <li>Parutan keju</li>
+    <li>Gelas</li>
+  </ul>
+
+  <!-- Tombol untuk melihat langkah-langkah resep -->
+  <button class="steps-button" aria-label="View recipe steps"
+  type="button"
+  onclick="location.href='langkah M9.html'">Langkah" &gt;</button>
+</section>
+</article>

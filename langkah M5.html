@@ -1,0 +1,111 @@
+<head>
+  <!-- Menyertakan font Darumadrop One dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  /* Container utama untuk resep */
+  .recipe-container {
+    background-color: #d7fbf3; /* Warna latar belakang */
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: start;
+    margin: 0 auto;
+    padding: 29px 29px 157px;
+    font-family: Darumadrop One, sans-serif; /* Font keluarga */
+  }
+
+  /* Wrapper untuk tombol kembali */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 25px 8px 1px;
+  }
+  
+  /* Desain tombol kembali berbentuk bulat */
+  .back-button {
+    background-color: #fff; /* Warna latar belakang tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px; /* Ukuran font besar untuk panah */
+    padding: 1px 3px 19px;
+    font-family: 'Darumadrop One', sans-serif;
+  }
+
+  /* Container untuk langkah-langkah resep */
+  .steps-container {
+    border-radius: 15px;
+    background-color: #9BCCD0; /* Warna latar belakang untuk langkah-langkah */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Efek bayangan */
+    align-self: stretch;
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column;
+    font-family: Darumadrop One, sans-serif;
+    color: #000; /* Warna teks hitam */
+    font-weight: 400;
+    padding: 29px 16px;
+    border: 10px solid transparent;
+  }
+
+  /* Judul langkah-langkah resep */
+  .steps-title {
+    border-radius: 20px;
+    background-color: #CAE1E3; /* Warna latar belakang judul */
+    font-size: 25px;
+    white-space: nowrap;
+    padding: 0 70px 8px; /* Padding kiri-kanan */
+    font-family: Darumadrop One, sans-serif;
+  }
+
+  /* Konten langkah-langkah resep */
+  .steps-content {
+    font-size: 24px;
+    align-self: start;
+    margin-top: 10px;
+    font-family: Darumadrop One, sans-serif;
+  }
+</style>
+
+<section class="recipe-container" role="region" aria-label="Recipe Instructions">
+
+<!-- Navigasi tombol kembali ke halaman sebelumnya -->
+<nav class="back-nav">
+  <div class="back-button-wrapper" type="button" onclick="location.href='tumis buncis.html'">
+    <!-- Tombol kembali berbentuk panah kiri -->
+    <button class="back-button" aria-label="Go back">
+      <span aria-hidden="true">&lt;</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Artikel untuk langkah-langkah resep -->
+<article class="steps-container">
+  <!-- Judul untuk langkah-langkah resep -->
+  <h2 class="steps-title">LANGKAH-LANGKAH</h2>
+  <div class="steps-content">
+    <!-- Langkah-langkah resep ditulis dengan elemen list item -->
+    <li>Setelah buncis dan jagung putren dicuci bersih dan dipotong-potong,sisihkan dahulu</li>
+    <br>
+    <li>Tumis bumbu yang telah diiris-iris tipis hingga wangi,lalu masukkan buncis dan jagung putren lalu aduk merata</li>
+    <br>
+    <li>Balur udang kedalam adonan basah kemudiang ke tepung panis,tekan perlahan supaya tepung panir melekat.</li>
+    <br>
+    <li>Goreng hingga kuning kecoklatan.</li>
+    <br>
+    <li>Angkat dan hidangkan</li>
+    <br>
+    <!-- Penutupan dengan pesan selamat mencoba -->
+    "Selamat mencoba!"
+  </div>
+</article>
+</section>

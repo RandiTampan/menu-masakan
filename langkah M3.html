@@ -1,0 +1,116 @@
+<head>
+  <!-- Menyertakan font Darumadrop One dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+/* Container utama untuk resep, memberikan latar belakang kuning terang dan desain flex */
+.recipe-container {
+  background-color: #DDDF9F;
+  display: flex;
+  max-width: 480px;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: start;
+  margin: 0 auto;
+  padding: 29px 29px 157px;
+  font-family: Darumadrop One, sans-serif;
+}
+
+/* Wrapper untuk tombol kembali, menggunakan flex untuk tata letak */
+.back-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  padding: 25px 8px 1px;
+}
+
+/* Gaya untuk tombol kembali, bulat dengan ikon panah kiri */
+.back-button {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 47px;
+  padding: 1px 3px 19px;
+  font-family: 'Darumadrop One', sans-serif; /* Menggunakan font Darumadrop One */
+}
+
+/* Container untuk langkah-langkah resep, dengan border-radius dan bayangan */
+.steps-container {
+  border-radius: 15px;
+  background-color: #ECEFA3;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+  align-self: stretch;
+  display: flex;
+  margin-top: 24px;
+  flex-direction: column;
+  font-family: Darumadrop One, sans-serif;
+  color: #000;
+  font-weight: 400;
+  padding: 29px 16px;
+  border: 10px solid transparent;
+}
+
+/* Judul langkah-langkah resep dengan latar belakang kuning pucat dan padding besar */
+.steps-title {
+  border-radius: 25px;
+  background-color: #FEFFDA;
+  font-size: 25px;
+  white-space: nowrap;
+  padding: 0 70px 8px;
+  font-family: Darumadrop One, sans-serif;
+}
+
+/* Gaya untuk konten langkah-langkah resep */
+.steps-content {
+  font-size: 24px;
+  align-self: start;
+  margin-top: 10px;
+  font-family: Darumadrop One, sans-serif;
+}
+</style>
+
+<section class="recipe-container" role="region" aria-label="Recipe Instructions">
+<!-- Navigasi untuk kembali ke halaman sebelumnya -->
+<nav class="back-nav">
+  <div class="back-button-wrapper"
+    type="button"
+    onclick="location.href='ebi furai.html'">
+    <!-- Tombol kembali dengan ikon panah kiri -->
+    <button class="back-button" aria-label="Go back">
+      <span aria-hidden="true">&lt;</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Bagian langkah-langkah resep -->
+<article class="steps-container">
+  <!-- Judul Langkah-Langkah -->
+  <h2 class="steps-title">LANGKAH-LANGKAH</h2>
+  
+  <!-- Daftar langkah-langkah -->
+  <div class="steps-content">
+    <li>Kupas udang, sisakan ekor, luruskan udang, marinasi pakai garam dan lada sedikit.</li>
+    <br>
+    <li>Dalam mangkuk, campur tepung, kaldu jamur, garam dan lada juga telur, aduk rata dan tuang sedikit air.</li>
+    <br>
+    <li>Balur udang ke dalam adonan basah, kemudian ke tepung panir, tekan perlahan supaya tepung panir melekat.</li>
+    <br>
+    <li>Goreng hingga kuning kecoklatan.</li>
+    <br>
+    <li>Angkat dan hidangkan.</li>
+    <br>
+    <!-- Pesan penutupan -->
+    "Selamat mencoba!"
+  </div>
+</article>
+</section>
+
+  

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Sigma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0; /* Menghapus margin default body */
+            font-family: sans-serif; /* Font default jika Irish Grover gagal dimuat */
+        }
+
+        .recipe-container {
+            background-color: #519674;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh; /* Memastikan kontainer mengisi seluruh tinggi layar */
+            padding: 20px;
+            padding-bottom: 50px; /* Atur jarak sesuai keinginan Anda (ditambah padding yang sudah ada) */
+            gap: 30px; /* Atur jarak sesuai keinginan Anda */
+            box-sizing: border-box; /* Memasukkan padding ke dalam perhitungan lebar dan tinggi */
+        }
+
+        .header-navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 50px; /* Memberi jarak antara navigasi dan prompt */
+        }
+
+        .nav-icon {
+            width: 30px;
+            height: auto;
+        }
+
+        .profile-icon {
+            width: 60px;
+            height: auto;
+        }
+
+        .recipe-prompt {
+            background-color: #CDCDC3;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            color: #2e4156;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Irish Grover', sans-serif;
+            font-size: 2em; /* Menggunakan em untuk responsivitas */
+            border: 1px solid #000;
+            border-radius: 15px; /* Radius border lebih kecil untuk tampilan mobile */
+            margin-bottom: 30px; /* Memberi jarak antara prompt dan button */
+            box-sizing: border-box;
+            max-width: 65%; /* Lebar maksimum 65% dari container */
+        }
+
+        .action-button {
+           text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+           background-color: #cdcdc3;
+           box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+           color: #2e4256;
+           padding: 6px 20px;
+           font-weight: bold;
+           margin-top: 200px;
+           font-size: 1.4em;
+           border: 1px solid #000;
+           border-radius: 20px;
+           cursor: pointer;
+           width: 50%;
+           box-sizing: border-box;
+           transition: transform 0.1s ease, box-shadow 0.1s ease; /* Add smooth transition */
+}
+
+/* Effect when the button is clicked (active) */
+.action-button:active {
+    transform: scale(0.95); /* Button shrinks a little */
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.35); /* Stronger shadow when pressed */
+    background-color: #a8a79a; /* Change background to a darker shade when clicked */
+}
+
+
+        /* Media Query untuk layar yang lebih besar dari mobile */
+        @media (min-width: 768px) {
+            .recipe-container {
+                max-width: 960px;
+                flex-direction: row;
+                height: 600px;
+                align-items: flex-start;
+                justify-content: space-around;
+            }
+
+            .header-navigation {
+                flex-direction: column;
+                margin-bottom: 0px;
+            }
+
+            .recipe-prompt {
+                max-width: 40%;
+                font-size: 3em;
+            }
+
+            .action-button {
+                width: auto;
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="recipe-container">
+        <nav class="header-navigation" role="navigation">
+            <img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/7617704f3f4d48c5c5fcbcb70888cfe9d9ac2214c902d977231724095e0373f1?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" class="nav-icon" alt="Navigation menu" role="button" tabindex="0" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/bfd4ec8ae809c0b42a58e70813a3fd93d451b08c73bbf16f04419b9718bd9e8b?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" class="profile-icon" alt="User profile" role="button" tabindex="0" />
+        </nav>
+        <h1 class="recipe-prompt">MAU MASAK APA HARI INI SOBAT SIGMA</h1>
+        <button class="action-button" type="button" onclick="location.href='menu.html'">NEXT</button>
+    </main>
+</body>
+</html>

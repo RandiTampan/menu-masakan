@@ -1,0 +1,123 @@
+<head>
+  <!-- Menyertakan font Darumadrop One dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  /* Container untuk langkah-langkah resep */
+  .recipe-steps-container {
+    background-color: rgba(249, 232, 242, 1); /* Warna latar belakang */
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: start;
+    margin: 0 auto;
+    padding: 29px 29px 157px;
+    font-family: Darumadrop One, sans-serif; /* Font keluarga */
+  }
+  
+  /* Tombol kembali dengan desain bulat */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 25px 8px 1px;
+  }
+  
+  /* Desain tombol kembali dengan lingkaran dan font besar */
+  .back-button {
+    background-color: #fff; /* Warna latar belakang putih */
+    border-radius: 50%; /* Membuat bentuk tombol bulat */
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px; /* Ukuran font besar */
+    padding: 1px 3px 19px;
+    font-family: 'Darumadrop One', sans-serif;
+  }
+  
+  /* Wrapper untuk instruksi resep */
+  .instructions-wrapper {
+    border-radius: 15px;
+    background-color: rgba(194, 148, 175, 1); /* Warna latar belakang untuk instruksi */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Efek bayangan */
+    align-self: stretch;
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column;
+    font-family: Darumadrop One, sans-serif;
+    color: #000; /* Warna teks hitam */
+    font-weight: 400;
+    padding: 29px 16px;
+    border: 10px solid transparent;
+  }
+  
+  /* Judul untuk setiap bagian instruksi */
+  .section-title {
+    border-radius: 14px;
+    background-color: rgba(232, 192, 215, 1); /* Warna latar belakang untuk judul */
+    text-align: center;
+    width: 100%;
+    max-width: 315px;
+    font-size: 29px;
+    margin: 0 auto;
+    padding: 0 12px 6px;
+  }
+  
+  /* Teks instruksi resep dengan ukuran font lebih besar */
+  .recipe-instructions {
+    font-size: 22px;
+    margin: 23px 50px -9px;
+    line-height: 1.5;
+  }
+  
+  /* Kelas untuk elemen yang disembunyikan secara visual (aksesibilitas) */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
+  
+<section class="recipe-steps-container" aria-labelledby="recipe-title">
+<!-- Navigasi untuk kembali ke halaman sebelumnya -->
+<nav class="back-nav">
+  <div class="back-button-wrapper" type="button" onclick="location.href='bihun kuah .html'">
+    <!-- Tombol kembali dengan simbol panah kiri -->
+    <button class="back-button" aria-label="Go back">
+      <span aria-hidden="true">&lt;</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Bagian instruksi resep -->
+<div class="instructions-wrapper">
+  <!-- Judul langkah-langkah resep -->
+  <h2 id="recipe-title" class="section-title">LANGKAH-LANGKAH</h2>
+  
+  <!-- Daftar instruksi resep -->
+  <div class="recipe-instructions" role="list">
+    <!-- Setiap langkah diwakili dengan elemen list item -->
+    <div role="listitem"><li>Potong-potong wortel menjadi kecil.</li></div>
+    <div role="listitem"><li>Rebus bihun dan wortel pakai rice cooker</li></div>
+    <div role="listitem"><li>Kalau sudah matang,angkat dan tiriskan</li></div>
+    <div role="listitem"><li>Bersihkan rice cooker masukkan sedikit air, bumbu pecel, dan bawang goreng instan.</li></div>
+    <div role="listitem"><li>Cicipi rasa,tambahkan sedikit garam dan gula jika tidak pas</li></div>
+    <div role="listitem"><li>Tunggu hingga mendidih,masukkan bihun dan wortel.</li></div>
+    <div role="listitem"><li>Biarkan bumbu meresap ke bihun.</div>
+    <div role="listitem"><li>Angkat dan sajikan.</li></div>
+    <!-- Penutupan dengan pesan selamat mencoba -->
+    <div role="listitem">"Selamat mencoba!"</div>
+  </div>
+</div>
+</section>

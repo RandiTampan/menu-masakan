@@ -1,0 +1,113 @@
+<head>
+  <!-- Menghubungkan stylesheet dari Google Fonts untuk font Darumadrop One -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+  /* Container utama untuk tampilan resep dengan latar belakang hijau */
+  .recipe-container {
+    background-color: #A7DFA4; /* Warna latar belakang hijau */
+    display: flex;
+    max-width: 450px;
+    width: 100%;
+    flex-direction: column; /* Menata konten secara vertikal */
+    overflow: hidden;
+    align-items: start; /* Menjaga elemen di sebelah kiri */
+    margin: 0 auto; /* Menjaga konten tetap terpusat */
+    padding: 29px 29px 157px; /* Memberikan padding di dalam kontainer */
+    font-family: Darumadrop One, sans-serif; /* Menggunakan font Darumadrop One */
+  }
+
+  /* Wrapper untuk tombol kembali */
+  .back-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      padding: 25px 8px 1px;
+  }
+  
+  /* Tombol kembali berbentuk bulat */
+  .back-button {
+    background-color: #fff; /* Warna latar belakang tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px;
+    padding: 1px 3px 19px;
+    font-family: 'Darumadrop One', sans-serif; /* Menggunakan font Darumadrop One */
+  }
+
+  /* Container untuk langkah-langkah resep */
+  .steps-container {
+    border-radius: 15px;
+    background-color: #83E27C; /* Warna latar belakang untuk bagian langkah-langkah */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Menambahkan bayangan pada kotak */
+    align-self: stretch;
+    display: flex;
+    margin-top: 24px;
+    flex-direction: column;
+    font-family: Darumadrop One, sans-serif;
+    color: #000; /* Warna teks hitam */
+    font-weight: 400;
+    padding: 29px 16px;
+    border: 10px solid transparent; /* Border transparan */
+  }
+
+  /* Judul untuk bagian langkah-langkah dengan latar belakang hijau muda */
+  .steps-title {
+    border-radius: 17px;
+    background-color: #AEF6A9; /* Warna latar belakang untuk judul */
+    font-size: 25px; /* Ukuran font judul */
+    white-space: nowrap; /* Menghindari pemotongan teks */
+    padding: 0 70px 8px;
+    font-family: Darumadrop One, sans-serif; /* Menggunakan font Darumadrop One */
+  }
+
+  /* Konten langkah-langkah resep */
+  .steps-content {
+    font-size: 24px; /* Ukuran font konten langkah-langkah */
+    align-self: start;
+    margin-top: 10px;
+    font-family: Darumadrop One, sans-serif; /* Menggunakan font Darumadrop One */
+  }
+</style>
+
+<section class="recipe-container" role="region" aria-label="Recipe Instructions">
+  <!-- Navigasi untuk tombol kembali -->
+  <nav class="back-nav">
+    <div class="back-button-wrapper"
+      type="button"
+      onclick="location.href='tempe orek.html'"> <!-- Arahkan ke halaman tempe orek -->
+      <button class="back-button" aria-label="Go back">
+        <span aria-hidden="true">&lt;</span> <!-- Simbol untuk tombol kembali -->
+      </button>
+    </div>
+  </nav>
+
+  <!-- Bagian langkah-langkah resep -->
+  <article class="steps-container">
+    <h2 class="steps-title">LANGKAH-LANGKAH</h2>
+    <div class="steps-content">
+      <!-- Langkah-langkah memasak Tempe Orek -->
+      <li>Potong tempe panjang-panjang.</li>
+      <br>
+      <li>Setelah dipotong, goreng tempe.</li>
+      <br>
+      <li>Cincang bawang dan cabai lalu tumis.</li>
+      <br>
+      <li>Masukkan tempe yang sudah digoreng.</li>
+      <br>
+      <li>Tambahkan kecap dan masako, lalu tambahkan sedikit air tunggu hingga bumbu meresap.</li>
+      <br>
+      <li>Tempe orek siap dihidangkan.</li>
+      <br>
+      <!-- Pesan akhir untuk mencoba resep -->
+      "Selamat mencoba!"
+    </div>
+  </article>
+</section>

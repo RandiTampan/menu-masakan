@@ -1,0 +1,219 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  /* Container utama untuk seluruh resep */
+  .recipe-container {
+    background-color: #ffa77e; /* Warna latar belakang kontainer */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Efek bayangan */
+    display: flex;
+    max-width: 480px; /* Lebar maksimum kontainer */
+    width: 100%;
+    flex-direction: column; /* Tata letak vertikal */
+    overflow: hidden;
+    align-items: center;
+    font-family: Darumadrop One, sans-serif; /* Jenis font */
+    color: #000; /* Warna teks */
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0 0 28px 7px; /* Padding bagian dalam */
+  }
+
+  /* Bagian header */
+  .header-wrapper {
+    align-self: stretch;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Jarak antar elemen */
+    justify-content: space-between;
+    padding: 1px 20px 28px; /* Padding bagian dalam header */
+  }
+
+  /* Tombol kembali ke halaman sebelumnya */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 25px 8px 1px; /* Padding bagian tombol */
+  }
+
+  .back-button {
+    background-color: #fff; /* Warna latar tombol */
+    border-radius: 50%; /* Bentuk bulat tombol */
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px;
+    padding: 1px 3px 19px; /* Padding teks tombol */
+    font-family: 'Darumadrop One', sans-serif; /* Jenis font */
+  }
+
+  /* Label tingkat kesulitan resep */
+  .difficulty-badge {
+    transform: rotate(-0.016616204777301954rad); /* Rotasi kecil untuk efek desain */
+    border-radius: 15px; /* Sudut melengkung */
+    background-color: #FF7839; /* Warna latar */
+    margin-top: 24px;
+    font-size: 25px;
+    padding: 2px 10px 8px; /* Padding teks */
+  }
+
+  /* Gambar resep */
+  .recipe-image {
+    aspect-ratio: 1.07; /* Rasio aspek gambar */
+    object-fit: contain; /* Gambar diatur agar sesuai */
+    object-position: center;
+    width: 100%;
+    border-radius: 50%; /* Gambar berbentuk lingkaran */
+    margin-top: -22px;
+    max-width: 281px; /* Ukuran maksimum gambar */
+  }
+
+  /* Judul resep */
+  .recipe-title {
+    border-radius: 15px; /* Sudut melengkung */
+    background-color: #ff7839; /* Warna latar judul */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); /* Efek bayangan */
+    align-self: center;
+    padding: 3px 57px; /* Padding teks judul */
+    text-align: center; /* Posisi teks di tengah */
+    font-size: 25px; /* Ukuran teks */
+  }
+
+  /* Bagian bahan-bahan */
+  .ingredients-container {
+    border-radius: 15px; /* Sudut melengkung */
+    background-color: rgba(255, 120, 57, 0.85); /* Warna latar bahan */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Efek bayangan */
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 314px; /* Lebar maksimum */
+    flex-direction: column; /* Tata letak vertikal */
+    color: rgba(0, 0, 0, 1); /* Warna teks */
+    padding: 8px 37px; /* Padding bagian dalam */
+    font: 400 24px Darumadrop One, sans-serif; /* Gaya font */
+  }
+
+  /* Judul bagian */
+  .section-title {
+    border-radius: 13px; /* Sudut melengkung */
+    background-color: #ffa77e; /* Warna latar */
+    align-self: center;
+    padding: 3px 27px; /* Padding teks */
+    text-align: center; /* Posisi teks di tengah */
+    font-size: 29px; /* Ukuran teks */
+  }
+
+  /* Kontainer untuk teks bahan-bahan dan alat */
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column; /* Tata letak vertikal */
+    padding: 0 13px; /* Padding bagian dalam */
+  }
+
+  /* Daftar bahan */
+  .ingredients-list {
+    font-size: 20px; /* Ukuran teks */
+  }
+
+  /* Judul bagian alat */
+  .tools-title {
+    border-radius: 13px; /* Sudut melengkung */
+    background-color: #ffa77e; /* Warna latar */
+    align-self: center;
+    padding: 3px 27px; /* Padding teks */
+    text-align: center; /* Posisi teks di tengah */
+    font-size: 29px; /* Ukuran teks */
+  }
+
+  /* Tata letak alat-alat */
+  .tools-grid {
+    align-self: center;
+    display: flex;
+    margin-top: 8px;
+    width: 100%;
+    max-width: 350px; /* Lebar maksimum */
+    gap: 15px; /* Jarak antar elemen */
+    justify-content: space-between; /* Posisi elemen */
+  }
+
+  /* Tombol untuk melihat langkah */
+  .steps-button {
+    z-index: 10;
+    border-radius: 13px; /* Sudut melengkung */
+    background-color: #ffa77e; /* Warna latar */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Efek bayangan */
+    align-self: end;
+    margin-top: 10px;
+    font-size: 23px; /* Ukuran teks */
+    padding: 2px 8px 4px; /* Padding teks */
+    border: 1px solid transparent; /* Border transparan */
+    font-family: 'Darumadrop One', sans-serif; /* Jenis font */
+  }
+  </style>
+  
+  <article class="recipe-container">
+    <!-- Header dengan tombol kembali dan badge tingkat kesulitan -->
+    <header class="header-wrapper"
+      type="button"
+      onclick="location.href='menu.html'">
+      <div class="back-button-wrapper">
+        <button class="back-button" aria-label="Go back">
+          <span aria-hidden="true">&lt;</span>
+        </button>
+      </div>
+      <span class="difficulty-badge" role="status" aria-label="Recipe difficulty: Hard">HARD</span>
+    </header>
+  
+    <!-- Gambar resep -->
+    <img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/272cc8a63cb6332bcc1198798cdaaf4762878afc08db8089cb0db4506c97967d?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" alt="Cumi Pedas Salty dish" class="recipe-image" />
+    
+    <!-- Judul resep -->
+    <h1 class="recipe-title">Cumi Pedas Salty</h1>
+    
+    <!-- Bagian bahan-bahan dan alat-alat -->
+    <section class="ingredients-container">
+      <h2 class="section-title">Bahan-Bahan</h2>
+      <div class="content-wrapper">
+        <!-- Daftar bahan-bahan -->
+        <ul class="ingredients-list">
+          <li>500 Gram Cumi Asin (Sesuai Selera) (Bersihkan dan rebus 20 Menit, Lalu Potong-Potong)</li>
+          <li>5 Siung Bawang Merah dan Putih (Iris Tipis)</li>
+          <li>15 Cabe Rawit Merah (Iris Tipis)</li>
+          <li>7 Cabe Rawit Hijau (Iris Tipis)</li>
+          <li>1 Lembar Daun Salam</li>
+          <li>1 Cm Lengkuas (Geprek)</li>
+          <li>1 Sdt Penyedap</li>
+          <li>Secukupnya Minyak Goreng</li>
+        </ul>
+  
+        <!-- Judul bagian alat-alat -->
+        <h2 class="tools-title">Alat-Alat</h2>
+        <!-- Daftar alat-alat yang digunakan -->
+        <div class="tools-grid">
+          <ul>
+            <li>Teflon</li>
+            <li>Sendok</li>
+            <li>Spatula</li>
+          </ul>
+          <ul>
+            <li>Pisau</li>
+            <li>Saringan</li>
+            <li>Piring</li>
+          </ul>
+        </div>
+  
+        <!-- Tombol untuk melihat langkah-langkah resep -->
+        <button class="steps-button" aria-label="View recipe steps"
+        type="button"
+        onclick="location.href='langkah M2.html'">Langkah" &gt;</button>
+      </div>
+    </section>
+  </article>

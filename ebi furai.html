@@ -1,0 +1,216 @@
+<head>
+  <!-- Mengimpor font 'Darumadrop One' dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  /* Container utama untuk resep */
+  .recipe-container {
+      background-color: #dddf9f; /* Warna latar belakang */
+      display: flex;
+      max-width: 480px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      font-family: Darumadrop One, sans-serif; /* Menggunakan font 'Darumadrop One' */
+      color: #000;
+      font-weight: 400;
+      margin: 0 auto;
+      padding: 24px 19px 42px;
+  }
+
+  /* Pembungkus untuk header */
+  .header-wrapper {
+      align-self: stretch;
+      z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      justify-content: space-between;
+      padding: 1px 20px 28px;
+  }
+
+  /* Wrapper untuk tombol kembali */
+  .back-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      padding: 25px 8px 1px;
+  }
+
+  /* Desain tombol kembali */
+  .back-button {
+      background-color: #fff;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 47px;
+      padding: 1px 13px 19px;
+      font-family: 'Darumadrop One', sans-serif; /* Menambahkan font-family */
+  }
+
+  /* Lencana kesulitan resep */
+  .difficulty-badge {
+      transform: rotate(-0.0037928219821974415rad);
+      border-radius: 15px;
+      background-color: #b2b474;
+      margin-top: 9px;
+      font-size: 24px;
+      padding: 4px 16px 6px;
+  }
+
+  /* Gambar resep dengan desain lingkaran */
+  .recipe-image {
+      aspect-ratio: 1.07;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      border-radius: 50%;
+      margin-top: -37px;
+      max-width: 281px;
+  }
+
+  /* Judul resep */
+  .recipe-title {
+      border-radius: 14px;
+      background-color: #ecefa3;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+      margin-top: 26px;
+      width: 100%;
+      max-width: 299px;
+      font-size:30px;
+      padding: 0 27px 8px;
+      text-align: center;
+  }
+
+  /* Container untuk daftar bahan */
+  .ingredients-container {
+      border-radius: 15px;
+      background-color: #ecefa3;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+      display: flex;
+      margin-top: 21px;
+      width: 100%;
+      max-width: 330px;
+      flex-direction: column;
+      font-size: 20px;
+      padding: 15px 22px 7px;
+      border: 1px solid transparent;
+  }
+
+  /* Judul untuk bagian bahan */
+  .section-title {
+      z-index: 10;
+      border-radius: 13px;
+      background-color: #feffda;
+      align-self: center;
+      padding: 3px 47px;
+      text-align: center;
+      font-size: 29px;
+  }
+
+  /* Judul untuk bagian alat */
+  .tools-title {
+      border-radius: 13px;
+      background-color: #feffda;
+      align-self: center;
+      padding: 3px 37px;
+      text-align: center;
+      font-size: 29px;
+  }
+
+  /* Daftar alat yang digunakan dalam resep */
+  .tools-list {
+      align-self: start;
+      display: flex;
+      margin-top: 9px;
+      gap: 8px;
+  }
+
+  /* Tombol untuk navigasi langkah selanjutnya */
+  .next-nav {
+      font-size: 36px;
+      align-self: end;
+      margin-top: 60px;
+  }
+
+  /* Tombol untuk melihat langkah-langkah resep */
+  .steps-button {
+      z-index: 10;
+      border-radius: 15px;
+      background-color: #feffda;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+      align-self: end;
+      margin-top: 10px;
+      font-size: 23px;
+      padding: 2px 8px 4px;
+      border: 1px solid transparent;
+      font-family: 'Darumadrop One', sans-serif; /* Menambahkan font-family */
+  }
+
+  /* Membuat elemen tersembunyi */
+  .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+  }
+</style>
+
+<section class="recipe-container" role="main" aria-labelledby="recipe-title">
+  <!-- Header dengan tombol kembali dan lencana kesulitan -->
+  <div class="header-wrapper" type="button" onclick="location.href='menu.html'">
+      <div class="back-button-wrapper">
+          <button class="back-button" aria-label="Go back">
+              <span aria-hidden="true">&lt;</span>
+          </button>
+      </div>
+      <div class="difficulty-badge" role="status" aria-label="Recipe difficulty">EASY</div>
+  </div>
+
+  <!-- Gambar resep -->
+  <img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/47de51c5189ec71fc04ba777e01c7ec7ec4f689a7ea1adc6da8f7256f5aadbb2?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" alt="Ebi Furai dish presentation" class="recipe-image" />
+
+  <!-- Judul resep -->
+  <h1 id="recipe-title" class="recipe-title">Ebi Furai</h1>
+
+  <article class="ingredients-container">
+      <!-- Bagian bahan-bahan -->
+      <h2 class="section-title">Bahan-Bahan</h2>
+      <ul aria-label="List of ingredients">
+          <li>500 gram udang besar (13 pcs)</li>
+          <li>100 gram tepung serbaguna</li>
+          <li>1 butir telur</li>
+          <li>3 siung bawang putih (diparut)</li>
+          <li>Kaldu jamur bubuk, garam, dan lada secukupnya</li>
+          <li>Air secukupnya (+/- 4 sdm)</li>
+      </ul>
+
+      <!-- Bagian alat-alat -->
+      <h2 class="tools-title">Alat-Alat</h2>
+      <div class="tools-list">
+          <ul aria-label="Required tools list">
+              <li>Mangkuk</li>
+              <li>Pisau</li>
+              <li>Penggorengan</li>
+          </ul>
+          <ul aria-label="Additional tools list">
+              <li>Saringan</li>
+              <li>Sendok / Whiskersh</li>
+          </ul>
+      </div>
+
+      <!-- Tombol untuk navigasi ke langkah selanjutnya -->
+      <div class="next-nav"></div>
+      <button class="steps-button" aria-label="View cooking steps" type="button" onclick="location.href='langkah M3.html'">Langkah &gt;</button>
+  </article>
+</section>

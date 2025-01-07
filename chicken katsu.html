@@ -1,0 +1,205 @@
+<head>
+  <!-- Menghubungkan font Darumadrop One dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+  /* Gaya untuk kontainer utama resep */
+  .recipe-container {
+    background-color: rgba(239, 173, 178, 1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    font-family: Darumadrop One, sans-serif;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 22px 17px 41px;
+  }
+
+  /* Gaya untuk header bagian atas */
+  .header-wrapper {
+    align-self: stretch;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 1px 20px 38px;
+  }
+
+  /* Gaya untuk tombol kembali */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 25px 8px 1px;
+  }
+
+  .back-button {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px;
+    padding: 1px 3px 19px;
+    font-family: 'Darumadrop One', sans-serif; /* Menentukan font-family */
+  }
+
+  /* Gaya untuk badge tingkat kesulitan */
+  .difficulty-badge {
+    transform: rotate(-0.016616204777301954rad);
+    border-radius: 15px;
+    background-color: rgba(217, 41, 49, 1);
+    margin-top: 24px;
+    font-size: 25px;
+    padding: 2px 10px 8px;
+  }
+
+  /* Gaya untuk gambar resep */
+  .recipe-image {
+    aspect-ratio: 1.03;
+    object-fit: contain;
+    object-position: center;
+    width: 259px;
+    border-radius: 207px;
+    margin-top: -36px;
+  }
+
+  /* Gaya untuk judul resep */
+  .recipe-title {
+    border-radius: 14px;
+    background-color: rgba(230, 58, 69, 1);
+    margin-top: 25px;
+    width: 230px;
+    font-size: 25px;
+    padding: 8px 48px;
+    text-align: center;
+  }
+
+  /* Gaya untuk kontainer bahan */
+  .ingredients-container {
+    border-radius: 15px;
+    background-color: rgba(230, 58, 69, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 330px;
+    flex-direction: column;
+    font-size: 24px;
+    padding: 13px 19px;
+    border: 3px solid transparent;
+  }
+
+  /* Gaya untuk judul bagian */
+  .section-title {
+    border-radius: 13px;
+    background-color: rgba(255, 126, 129, 1);
+    align-self: center;
+    padding: 3px 35px;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  /* Gaya untuk daftar bahan */
+  .ingredients-list {
+    font-size: 23px;
+    margin-top: 13px;
+    width: 100%;
+  }
+
+  /* Gaya untuk judul alat */
+  .tools-title {
+    border-radius: 13px;
+    background-color: rgba(255, 126, 128, 1);
+    align-self: center;
+    margin-top: 25px;
+    width: 220px;
+    padding: 0 15px 5px;
+  }
+
+  /* Gaya untuk tombol langkah */
+  .steps-button {
+    border-radius: 13px;
+    background-color: rgba(255, 126, 128, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    align-self: end;
+    margin-top: 10px;
+    font-size: 23px;
+    padding: 2px 8px 4px;
+    border: 1px solid transparent;
+    font-family: 'Darumadrop One', sans-serif; /* Menentukan font-family */
+  }
+
+  /* Gaya untuk elemen tersembunyi secara visual */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
+
+<!-- Bagian utama halaman resep -->
+<section class="recipe-container" role="main" aria-labelledby="recipe-title">
+<!-- Header dengan tombol kembali dan badge kesulitan -->
+<div class="header-wrapper" type="button" onclick="location.href='menu.html'">
+  <div class="back-button-wrapper">
+    <!-- Tombol kembali -->
+    <button class="back-button" aria-label="Go back">
+      <span aria-hidden="true">&lt;</span>
+    </button>
+  </div>
+  <!-- Badge kesulitan -->
+  <div class="difficulty-badge" role="status" aria-label="Recipe difficulty: Hard">HARD</div>
+</div>
+
+<!-- Gambar resep -->
+<img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/163dfcc3aa650ea6555e937da8665d5812f3c265548bebf71a49920dba735753?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" alt="Chicken Katsu Curry dish" class="recipe-image" />
+
+<!-- Judul resep -->
+<h1 id="recipe-title" class="recipe-title">Chicken Katsu Curry</h1>
+
+<!-- Kontainer untuk bahan dan alat -->
+<div class="ingredients-container">
+  <!-- Bagian bahan-bahan -->
+  <h2 class="section-title">Bahan-Bahan</h2>
+  <ul class="ingredients-list">
+    <li>Dada ayam fillet</li>
+    <li>1 buah kentang</li>
+    <li>1 buah wortel</li>
+    <li>1/2 bawang bombay</li>
+    <li>Air secukupnya</li>
+    <li>Minyak secukupnya</li>
+    <li>Bumbu kari instan</li>
+    <li>Tepung secukupnya</li>
+    <li>1 buah telur</li>
+    <li>Tepung roti</li>
+  </ul>
+
+  <!-- Bagian alat-alat -->
+  <h2 class="section-title">Alat-Alat</h2>
+  <ul class="ingredients-list">
+    <li>Pisau</li>
+    <li>Wajan</li>
+    <li>Spatula</li>
+  </ul>
+
+  <!-- Tombol untuk melihat langkah resep -->
+  <button class="steps-button" aria-label="View recipe steps" type="button" onclick="location.href='langkah M10.html'">Langkah" &gt;</button>
+</div>
+</section>

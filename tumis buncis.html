@@ -1,0 +1,195 @@
+<head>
+  <!-- Menyisipkan font dari Google Fonts untuk menggunakan font 'Darumadrop One' -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+  /* Gaya untuk kontainer utama resep */
+  .recipe-container {
+    background-color: rgba(215, 251, 243, 1); /* Warna latar belakang kontainer */
+    display: flex;
+    max-width: 480px; /* Lebar maksimal kontainer */
+    width: 100%; /* Lebar penuh */
+    padding: 0 0 20px; /* Padding bawah */
+    flex-direction: column; /* Tata letak kolom */
+    overflow: hidden;
+    align-items: center; /* Pusatkan konten secara horizontal */
+    font-family: Darumadrop One, sans-serif; /* Menggunakan font khusus */
+    color: rgba(0, 0, 0, 1); /* Warna teks */
+    font-weight: 400;
+    margin: 0 auto; /* Pusatkan kontainer di halaman */
+  }
+
+  /* Gaya untuk header yang berisi tombol kembali dan kesulitan resep */
+  .header-wrapper {
+    align-self: stretch; /* Rentangkan header ke seluruh lebar kontainer */
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between; /* Ruang antar elemen */
+    padding: 20px 20px 38px; /* Padding dalam header */
+  }
+
+  /* Gaya untuk tombol kembali */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px; /* Ukuran font tombol kembali */
+    padding: 25px 8px 1px; /* Padding tombol */
+  }
+  
+  /* Gaya untuk tombol kembali berbentuk lingkaran */
+  .back-button {
+    background-color: #fff; /* Warna latar belakang tombol */
+    border-radius: 50%; /* Bentuk lingkaran */
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Pusatkan konten dalam tombol */
+    cursor: pointer; /* Tampilkan kursor pointer saat hover */
+    font-size: 47px; /* Ukuran font untuk panah */
+    padding: 1px 13px 19px; /* Padding dalam tombol */
+    font-family: 'Darumadrop One', sans-serif; /* Font khusus */
+  }
+
+  /* Gaya untuk badge kesulitan resep */
+  .difficulty-badge {
+    transform: rotate(-0.0037928219821974415rad); /* Rotasi badge */
+    border-radius: 15px;
+    background-color: rgba(155, 204, 208, 1); /* Warna latar belakang */
+    margin-top: 9px;
+    font-size: 24px;
+    padding: 4px 16px 6px;
+  }
+
+  /* Gaya untuk gambar resep */
+  .recipe-image {
+    aspect-ratio: 1.07; /* Rasio aspek gambar */
+    object-fit: contain; /* Gambar tidak terpotong */
+    width: 100%;
+    margin-top: -37px; /* Mengatur jarak antara gambar dan elemen di atasnya */
+    max-width: 281px; /* Lebar maksimal gambar */
+  }
+
+  /* Gaya untuk judul resep */
+  .recipe-title {
+    border-radius: 13px; /* Sudut melengkung */
+    background-color: rgba(155, 204, 208, 1); /* Warna latar belakang */
+    margin-top: 70px; /* Margin atas */
+    width: 100%;
+    max-width: 270px; /* Lebar maksimal judul */
+    font-size: 23px; /* Ukuran font judul */
+    text-align: center; /* Pusatkan teks */
+    padding: 5px 20px; /* Padding dalam judul */
+  }
+
+  /* Gaya untuk kontainer yang berisi bahan dan alat */
+  .recipe-content {
+    border-radius: 15px; /* Sudut melengkung */
+    background-color: rgba(155, 204, 208, 1); /* Warna latar belakang */
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.25); /* Bayangan efek */
+    display: flex;
+    margin-top: 11px; /* Spasi atas */
+    width: 100%;
+    max-width: 256px;
+    flex-direction: column; /* Tata letak kolom */
+    font-size: 24px; /* Ukuran font */
+    padding: 7px 30px 17px; /* Padding dalam kontainer */
+  }
+
+  /* Gaya untuk header bahan dan alat */
+  .section-header {
+    border-radius: 14px; /* Sudut melengkung */
+    background-color: rgba(202, 225, 227, 1); /* Warna latar belakang header */
+    align-self: center; /* Pusatkan header */
+    width: 200px;
+    max-width: 100%; /* Lebar maksimal header */
+    text-align: center; /* Pusatkan teks */
+    padding: 3px 20px; /* Padding dalam header */
+    font-size: 29px; /* Ukuran font header */
+  }
+
+  /* Gaya untuk daftar bahan */
+  .ingredients-list {
+    margin: 10px 0; /* Margin vertikal untuk daftar bahan */
+  }
+
+  /* Gaya untuk daftar alat */
+  .tools-list {
+    align-self: start; /* Posisikan ke kiri */
+    z-index: 10; /* Pastikan daftar alat berada di atas elemen lain */
+  }
+
+  /* Gaya untuk tombol menuju langkah berikutnya */
+  .next-step {
+    border-radius: 13px; /* Sudut melengkung */
+    background-color: rgba(202, 225, 227, 1); /* Warna latar belakang tombol */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Bayangan efek */
+    align-self: end; /* Posisikan tombol ke kanan bawah */
+    font-size: 23px; /* Ukuran font tombol */
+    padding: 0 13px 5px; /* Padding dalam tombol */
+    border: 2px solid transparent; /* Border transparan */
+    cursor: pointer; /* Tampilkan kursor pointer */
+    font-family: 'Darumadrop One', sans-serif; /* Font khusus */
+  }
+
+  /* Kelas untuk elemen yang disembunyikan secara visual (untuk aksesibilitas) */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* Sembunyikan elemen tanpa menghapusnya dari DOM */
+    border: 0;
+  }
+</style>
+
+<main class="recipe-container">
+  <!-- Header dengan tombol kembali dan badge kesulitan -->
+  <div class="header-wrapper" type="button" onclick="location.href='menu.html'">
+      <div class="back-button-wrapper">
+          <button class="back-button" aria-label="Go back">
+              <span aria-hidden="true">&lt;</span> <!-- Simbol panah kiri -->
+          </button>
+      </div>
+      <!-- Badge kesulitan resep -->
+      <div class="difficulty-badge" role="status" aria-label="Recipe difficulty">EASY</div>
+  </div>
+
+  <!-- Gambar resep dengan atribut alt untuk aksesibilitas -->
+  <img class="recipe-image" src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/73d3166fd33b9752df2def2fe6cfd9c260a55a267821383f00069d0b7e79d35a?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" alt="Tumis Buncis Jagung Muda dish" loading="lazy"/>
+  
+  <!-- Judul resep -->
+  <h1 class="recipe-title">Tumis Buncis Jagung Muda</h1>
+  
+  <article class="recipe-content">
+      <!-- Bagian bahan-bahan resep -->
+      <h2 class="section-header">Bahan-Bahan</h2>
+      <div class="ingredients-list">
+          - 250 gram buncis siangi<br/>
+          - 150 gram jagung putren,<br/>
+          - 2 sdm Kecap Manis<br/>
+          Bumbu Iris :<br/>
+          - 6 siung bawang merah dan cabai rawit merah<br/>
+          - 3 siung bawang putih dan cabai merah keriting<br/>
+          - 1 buah Tomat hijau<br/>
+          - Garam, lada, gula, dan penyedap secukupnya
+      </div>
+
+      <!-- Bagian alat-alat yang dibutuhkan -->
+      <h2 class="section-header">Alat-Alat</h2>
+      <div class="tools-list">
+          - Teflon<br/>
+          - Pisau<br/>
+          - Piring
+      </div>
+
+      <!-- Tombol menuju langkah berikutnya -->
+      <button class="next-step" aria-label="View cooking steps" type="button" onclick="location.href='langkah M5.html'">Langkah &gt;</button>
+  </article>
+</main>

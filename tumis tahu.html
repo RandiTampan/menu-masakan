@@ -1,0 +1,226 @@
+<head>
+  <!-- Menghubungkan stylesheet dari Google Fonts untuk font Darumadrop One -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+  /* Container utama untuk tampilan resep */
+  .recipe-container {
+    background-color: rgba(199, 207, 255, 1); /* Warna latar belakang */
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column; /* Tata letak konten secara vertikal */
+    overflow: hidden;
+    align-items: center;
+    font-family: Darumadrop One, sans-serif; /* Menggunakan font Darumadrop One */
+    color: rgba(0, 0, 0, 1); /* Warna teks */
+    font-weight: 400;
+    margin: 0 auto; /* Menjaga agar konten terpusat */
+    padding: 27px 0 46px 14px;
+  }
+  
+  /* Wrapper untuk header yang berisi tombol kembali dan badge tingkat kesulitan */
+  .header-wrapper {
+    align-self: stretch;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 11px 20px 2px ;
+  }
+  
+  /* Tombol kembali */
+  .back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 25px 8px 1px;
+  }
+  
+  /* Styling tombol kembali berbentuk bulat */
+  .back-button {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 47px;
+    padding: 1px 13px 19px;
+    font-family: 'Darumadrop One', sans-serif; /* Font untuk tombol */
+  }
+  
+  /* Wrapper untuk gambar resep */
+  .image-wrapper {
+    display: flex;
+    align-items: flex-start;
+    font-size: 25px;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: auto;
+    padding: 5px 110px 1px;
+  }
+  
+  /* Styling gambar resep */
+  .recipe-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 219px;
+    align-self: end;
+    margin: 34px -20px 0 0;
+  }
+  
+  /* Badge tingkat kesulitan */
+  .difficulty-badge {
+    transform: rotate(-0.0037928219821974415rad); /* Menyesuaikan rotasi badge */
+    border-radius: 15px;
+    background-color: rgba(110, 130, 255, 1);
+    margin-top: 9px;
+    font-size: 24px;
+    padding: 4px 16px 6px;
+  }
+  
+  /* Judul resep */
+  .recipe-title {
+    border-radius: 13px;
+    background-color: rgba(131, 147, 242, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Menambahkan bayangan */
+    margin-top: 27px;
+    width: 250px;
+    max-width: 100%;
+    font-size: 29px; 
+    text-align: center;
+    padding: 4px 34px;
+  }
+  
+  /* Detail resep (bahan dan alat) */
+  .recipe-details {
+    border-radius: 15px;
+    background-color: rgba(131, 147, 242, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 11px;
+    width: 100%;
+    max-width: 310px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    padding: 7px 30px 17px;
+  }
+  
+  /* Judul untuk bagian bahan-bahan */
+  .ingredients-title {
+    border-radius: 13px;
+    background-color: rgba(192, 210, 255, 0.63); /* Warna latar belakang bahan-bahan */
+    width: 200px;
+    max-width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    padding: 2px 30px;
+    font-size: 28px;
+  }
+  
+  /* Daftar bahan-bahan */
+  .ingredients-list {
+    margin-top: 11px;
+    list-style-type: none; /* Menghilangkan penanda list */
+    padding: 0;
+  }
+  
+  /* Judul untuk bagian alat-alat */
+  .tools-title {
+    border-radius: 13px;
+    background-color: rgba(161, 180, 255, 1);
+    margin-top: 26px;
+    width: 200px;
+    white-space: nowrap;
+    text-align: center;
+    padding: 2px 30px;
+    font-size: 28px;
+  }
+  
+  /* Bagian untuk alat-alat yang digunakan */
+  .tools-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+  }
+  
+  /* Daftar alat-alat */
+  .tools-list {
+    align-self: start;
+    list-style-type: none; /* Menghilangkan penanda list */
+    padding: 0;
+  }
+  
+  /* Tombol untuk melanjutkan ke langkah berikutnya */
+  .steps-button {
+    border-radius: 13px;
+    background-color: rgba(161, 180, 255, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    align-self: end;
+    font-size: 23px;
+    padding: 0 13px 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Darumadrop One', sans-serif; /* Font untuk tombol */
+  }
+</style>
+
+<!-- Konten utama resep -->
+<section class="recipe-container" role="main" aria-label="Recipe details for Tumis Tahu">
+  <!-- Header dengan tombol kembali dan badge tingkat kesulitan -->
+  <div class="header-wrapper" type="button" onclick="location.href='menu.html'">
+      <div class="back-button-wrapper">
+          <button class="back-button" aria-label="Go back">
+              <span aria-hidden="true">&lt;</span>
+          </button>
+      </div>
+      <!-- Badge tingkat kesulitan resep -->
+      <div class="difficulty-badge" role="status" aria-label="Recipe difficulty">EASY</div>
+  </div>
+
+  <!-- Gambar resep Tumis Tahu -->
+  <div class="image-wrapper">
+      <img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/5d439bd9117d20985c499f6612914bb7a7b5db683a46547c9816705a92e344c3?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" alt="Prepared Tumis Tahu dish" class="recipe-image" />
+  </div>
+  
+  <!-- Judul resep -->
+  <h1 class="recipe-title">Tumis Tahu</h1>
+  
+  <!-- Detail resep: Bahan-bahan dan Alat-alat -->
+  <div class="recipe-details">
+      <!-- Bagian bahan-bahan -->
+      <h2 class="ingredients-title">Bahan-Bahan</h2>
+      <ul class="ingredients-list">
+          <li>1 Tahu Putih</li>
+          <li>2 Siung Bawang Putih</li>
+          <li>1 Tangkai Daun Bawang</li>
+          <li>5 Buah Cabai Rawit Merah</li>
+          <li>2 sdm saus tiram</li>
+          <li>minyak wijen, kaldu bubuk, dan air secukupnya</li>
+      </ul>
+      
+      <!-- Bagian alat-alat -->
+      <h2 class="tools-title">Alat-Alat</h2>
+      <div class="tools-section">
+          <ul class="tools-list">
+              <li>-Teflon</li>
+              <li>-Pisau</li>
+              <li>-Piring</li>
+          </ul>
+          <!-- Tombol untuk melanjutkan ke langkah-langkah resep -->
+          <button class="steps-button" aria-label="View recipe steps"
+          type="button"
+          onclick="location.href='langkah M6.html'">Langkah" &gt;</button>
+      </div>
+  </div>
+</section>

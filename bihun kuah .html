@@ -1,0 +1,197 @@
+<head>
+  <!-- Menambahkan font dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  /* Container utama untuk tampilan resep */
+  .recipe-container {
+    background-color: rgba(249, 232, 242, 1);
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    font-family: Darumadrop One, sans-serif;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 11px 11px 29px 30px;
+  }
+  
+  /* Navigasi dengan tombol kembali */
+  .nav-back {
+    align-self: stretch;
+    z-index: 10;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  /* Tombol kembali */
+.back-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px; /* Ukuran font tombol */
+    padding: 25px 8px 1px; /* Spasi di sekitar tombol */
+   }
+    
+  .back-button {
+    background-color: #fff;
+    border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+    width: 43px; /* Lebar tombol */
+    height: 43px; /* Tinggi tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Pusatkan ikon di tombol */
+    cursor: pointer;
+    font-size: 38px; /* Ukuran font ikon */
+    padding: 1px 3px 19px;
+    font-family: 'Darumadrop One', sans-serif; /* Gunakan font khusus */
+  }
+  
+  .difficulty-badge {
+    border-radius: 15px;
+    background-color: rgba(194, 148, 175, 1);
+    margin-top: 24px;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+  }
+  
+  .recipe-image {
+    aspect-ratio: 1.07;
+    object-fit: contain;
+    object-position: center;
+    width: 80%;
+    border-radius: 50%;
+    margin-top: -18px;
+    max-width: 280px;
+  }
+  
+  .recipe-title {
+    border-radius: 14px;
+    background-color: rgba(194, 148, 175, 1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    margin-top: 26px;
+    width: 90%;
+    max-width: 300px;
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .recipe-details {
+    border-radius: 14px;
+    background-color: rgba(194, 148, 175, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 26px;
+    width: 90%;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .ingredients-section, .tools-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    padding: 5px;
+  }
+  
+  .section-title, .section-label {
+    border-radius: 13px;
+    background-color: rgba(232, 192, 215, 1);
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .tools-list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  /* Gaya untuk tombol langkah berikutnya */
+  .steps-button {
+    border-radius: 15px;
+    background-color: rgba(232, 192, 215, 1);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25);
+    align-self: end;
+    font-size: 22px;
+    padding: 0 12px 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: 'Darumadrop One', sans-serif;
+  }
+  
+  /* Media query untuk layar kecil */
+  @media (max-width: 768px) {
+    .recipe-container {
+      padding: 10px;
+    }
+
+    .recipe-title {
+      font-size: 1.2rem;
+    }
+
+    .difficulty-badge {
+      font-size: 1rem;
+    }
+
+    .steps-button {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<main class="recipe-container">
+  <nav class="nav-back" type="button" onclick="location.href='menu.html'">
+    <div class="back-button-wrapper">
+      <button class="back-button" aria-label="Go back">
+        <span aria-hidden="true">&lt;</span>
+      </button>
+    </div>
+    <div class="difficulty-badge" role="status" aria-label="Recipe difficulty">HARD</div>
+  </nav>
+
+  <img
+    src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/2c02401d158642ab26b715481b1a32ebb4570d13358bf24a8abe55bb0230d61f?apiKey=5ebb4996bcdb4f6db698a2f89422c915&"
+    class="recipe-image"
+    alt="Bihun Kuah Rice Cooker dish"
+    loading="lazy"
+  />
+
+  <h1 class="recipe-title">Bihun Kuah Rice Cooker</h1>
+
+  <section class="recipe-details">
+    <!-- Bagian Bahan-Bahan -->
+    <div class="ingredients-section">
+      <h2 class="section-title">Bahan-Bahan</h2>
+      <ul class="ingredients-list">
+        <li>Bihun jagung</li>
+        <li>1/2 potong wortel</li>
+        <li>Bawang goreng instan</li>
+        <li>Bumbu pecel instan</li>
+        <li>Garam dan gula</li>
+      </ul>
+    </div>
+  
+    <!-- Bagian Alat-Alat -->
+    <div class="tools-section">
+      <h2 class="section-title">Alat-Alat</h2>
+      <ul class="tools-list">
+        <li>Saringan</li>
+        <li>Rice Cooker</li>
+        <li>Pisau</li>
+        <li>Piring</li>
+      </ul>
+    </div>
+  
+    <button class="steps-button" aria-label="View recipe steps" type="button" onclick="location.href='langkah M4.html'">Langkah &gt;</button>
+  </section>
+  

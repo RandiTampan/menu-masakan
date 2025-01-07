@@ -1,0 +1,217 @@
+<head>
+  <!-- Menghubungkan font "Darumadrop One" dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    /* Gaya untuk wadah utama resep */
+    .recipe-container {
+      background-color: rgba(246, 180, 176, 1); /* Warna latar belakang */
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* Bayangan */
+      display: flex; /* Menggunakan flexbox */
+      max-width: 480px; /* Lebar maksimum */
+      width: 100%; /* Lebar penuh */
+      flex-direction: column; /* Susunan elemen secara vertikal */
+      overflow: hidden; /* Sembunyikan elemen yang melampaui batas */
+      align-items: center; /* Elemen diratakan di tengah */
+      font-family: Darumadrop One, sans-serif; /* Font kustom */
+      color: rgba(0, 0, 0, 1); /* Warna teks */
+      font-weight: 400; /* Ketebalan teks */
+      margin: 0 auto; /* Ratakan elemen ke tengah */
+      padding: 22px 17px 64px; /* Jarak dalam */
+    }
+
+    /* Gaya untuk navigasi */
+    .nav-container {
+      align-self: stretch; /* Wadah meregangkan dirinya */
+      display: flex;
+      align-items: start; /* Elemen disejajarkan ke atas */
+      gap: 20px; /* Jarak antar elemen */
+      justify-content: space-between; /* Elemen diratakan secara horizontal */
+    }
+
+    /* Gaya untuk tombol kembali */
+    .back-button-wrapper {
+      display: flex;
+      flex-direction: column; /* Susunan vertikal */
+      font-size: 20px;
+      padding: 25px 8px 1px; /* Jarak dalam */
+    }
+
+    .back-button {
+      background-color: #fff; /* Warna latar belakang tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+      width: 52px; /* Lebar tombol */
+      height: 52px; /* Tinggi tombol */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; /* Ubah kursor menjadi pointer */
+      font-size: 47px; /* Ukuran font */
+      padding: 1px 3px 19px; /* Jarak dalam tombol */
+      font-family: 'Darumadrop One', sans-serif; /* Tambahkan font kustom */
+    }
+
+    /* Gaya untuk label kesulitan */
+    .difficulty-badge {
+      transform: rotate(-0.016616204777301954rad); /* Sedikit memutar elemen */
+      border-radius: 15px; /* Membuat sudut elemen melengkung */
+      background-color: rgba(238, 97, 88, 1); /* Warna latar belakang */
+      margin-top: 9px; /* Jarak dari atas */
+      font-size: 25px; /* Ukuran teks */
+      padding: 1px 9px 5px; /* Jarak dalam */
+    }
+
+    /* Gaya untuk gambar resep */
+    .recipe-image {
+      aspect-ratio: 1.07; /* Rasio aspek gambar */
+      object-fit: contain; /* Gambar disesuaikan dengan wadah */
+      object-position: center; /* Posisi gambar di tengah */
+      width: 243px; /* Lebar gambar */
+      border-radius: 237px; /* Membuat gambar berbentuk lingkaran */
+      z-index: 10; /* Posisi elemen di atas lainnya */
+      margin-top: -10px; /* Jarak dari atas */
+      max-width: 100%; /* Lebar maksimum */
+    }
+
+    /* Gaya untuk judul resep */
+    .recipe-title {
+      border-radius: 14px; /* Membuat sudut elemen melengkung */
+      background-color: rgba(239, 110, 101, 1); /* Warna latar belakang */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); /* Bayangan */
+      margin-top: 37px; /* Jarak dari atas */
+      width: 280px; /* Lebar elemen */
+      max-width: 100%; /* Lebar maksimum */
+      font-size: 24px; /* Ukuran font */
+      padding: 9px 30px; /* Jarak dalam */
+      text-align: center; /* Teks diratakan di tengah */
+    }
+
+    /* Gaya untuk bagian bahan */
+    .ingredients-container {
+      border-radius: 15px; /* Membuat sudut elemen melengkung */
+      background-color: rgba(238, 97, 88, 0.92); /* Warna latar belakang */
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Bayangan */
+      display: flex;
+      margin-top: 15px; /* Jarak dari atas */
+      width: 100%; /* Lebar penuh */
+      max-width: 280px; /* Lebar maksimum */
+      flex-direction: column; /* Susunan vertikal */
+      font-size: 24px; /* Ukuran font */
+      padding: 12px 13px 12px 40px; /* Jarak dalam */
+    }
+
+    /* Gaya untuk judul bagian */
+    .section-title {
+      border-radius: 13px; /* Membuat sudut elemen melengkung */
+      background-color: rgba(250, 169, 163, 1); /* Warna latar belakang */
+      align-self: center; /* Ratakan elemen di tengah */
+      width: 200px; /* Lebar elemen */
+      max-width: 100%; /* Lebar maksimum */
+      white-space: nowrap; /* Mencegah teks terpotong */
+      padding: 1px 25px; /* Jarak dalam */
+      text-align: center; /* Teks diratakan di tengah */
+      font-size: 31px; /* Ukuran font */
+    }
+
+    /* Gaya untuk daftar bahan */
+    .ingredients-list {
+      font-size: 25px; /* Ukuran font */
+      align-self: start; /* Elemen disejajarkan ke awal */
+    }
+
+    /* Gaya untuk bagian alat */
+    .tools-section {
+      align-self: start; /* Elemen disejajarkan ke awal */
+      display: flex;
+      margin-top: 25px; /* Jarak dari atas */
+      align-items: flex-start; /* Elemen disejajarkan di atas */
+      gap: 7px; /* Jarak antar elemen */
+    }
+
+    .tools-list {
+      align-self: end; /* Elemen disejajarkan ke akhir */
+      margin-top: 18px; /* Jarak dari atas */
+      font-size: 25px; /* Ukuran font */
+    }
+
+    /* Gaya untuk tombol langkah */
+    .steps-button {
+      z-index: 10; /* Posisi elemen di atas lainnya */
+      border-radius: 13px; /* Membuat sudut elemen melengkung */
+      background-color: rgba(250, 169, 163, 1); /* Warna latar belakang */
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.25); /* Bayangan */
+      align-self: end; /* Elemen disejajarkan ke akhir */
+      font-size: 25px; /* Ukuran font */
+      padding: 0 13px 5px; /* Jarak dalam */
+      border: 2px solid transparent; /* Border transparan */
+      cursor: pointer; /* Ubah kursor menjadi pointer */
+      font-family: 'Darumadrop One', sans-serif; /* Font kustom */
+    }
+
+    /* Gaya untuk elemen yang tersembunyi secara visual */
+    .visually-hidden {
+      position: absolute; /* Posisi elemen absolut */
+      width: 1px; /* Lebar elemen sangat kecil */
+      height: 1px; /* Tinggi elemen sangat kecil */
+      padding: 0;
+      margin: -1px;
+      overflow: hidden; /* Sembunyikan elemen */
+      clip: rect(0, 0, 0, 0); /* Potong elemen */
+      white-space: nowrap; /* Mencegah teks terpotong */
+      border: 0; /* Hilangkan border */
+    }
+</style>
+
+<!-- Struktur HTML untuk artikel resep -->
+<article class="recipe-container">
+  <!-- Bagian navigasi -->
+  <nav class="nav-container" role="navigation">
+    <div class="back-button-wrapper"
+      type="button"
+      onclick="location.href='menu.html'">
+      <!-- Tombol kembali -->
+      <button class="back-button" aria-label="Go back">
+        <span aria-hidden="true">&lt;</span> <!-- Panah kiri -->
+      </button>
+    </div>
+    <!-- Badge untuk menampilkan tingkat kesulitan -->
+    <span class="difficulty-badge" role="status" aria-label="Recipe difficulty: Hard">HARD</span>
+  </nav>
+
+  <!-- Gambar resep -->
+  <img src="https://cdn.builder.io/api/v1/image/assets/5ebb4996bcdb4f6db698a2f89422c915/af91872e741e9f01f5d6f31b500cd3986d133602aedfab20d28893f05bd735ea?apiKey=5ebb4996bcdb4f6db698a2f89422c915&" alt="Tahu Kecap Pedas Manis dish" class="recipe-image" />
+  
+  <!-- Judul resep -->
+  <h1 class="recipe-title">Tahu Kecap Pedas Manis</h1>
+
+  <!-- Bagian bahan-bahan -->
+  <section class="ingredients-container">
+    <h2 class="section-title">Bahan-Bahan</h2>
+    <ul class="ingredients-list">
+      <!-- Daftar bahan resep -->
+      <li>1 Bawang putih</li>
+      <li>3 Bawang merah</li>
+      <li>secukupnya Lengkuas</li>
+      <li>1 Tomat</li>
+      <li>Lengkuas, terasi, merica bubuk, gula, garam secukupnya</li>
+      <li>Minyak goreng</li>
+    </ul>
+
+    <!-- Bagian alat-alat -->
+    <h2 class="section-title">Alat-Alat</h2>
+    <div class="tools-section">
+       <ul class="tools-list">
+        <!-- Daftar alat yang diperlukan -->
+        <li>panci</li>
+        <li>pisau</li>
+        <li>Piring</li>
+      </ul>
+    </div>
+
+    <!-- Tombol untuk melihat langkah memasak -->
+    <button class="steps-button" aria-label="View recipe steps"
+    type="button"
+    onclick="location.href='langkah M7.html'">Langkah &gt;</button>
+  </section>
+</article>
